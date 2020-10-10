@@ -3,17 +3,20 @@ isFulltime=1
 isPartTime=2
 empRatePerhour=20
 randomCheck=$((RANDOM%3))
-if [ $randomCheck -eq $isFulltime ]
-then
-        emphrs=8
-elif [ $randomCheck -eq $isPartTime ]
-then
-   emphrs=4
-else
-        emphrs=0
-fi
+case $randomCheck in
+        $isFulltime )
+                emphrs=8
+;;
+ $isPartTime )
+        emphrs=4
+;;
+        * )
+                emphrs=0
+;;
+esac
 salary=$(($empRatePerhour*$emphrs))
 
 echo "Your one day salary is :" $salary
+
 
 
