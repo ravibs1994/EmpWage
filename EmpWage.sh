@@ -1,3 +1,12 @@
 #!/bin/bash -x
-echo "Welcome to Emp wage "
+randomCheck=$((RANDOM%2))
+echo $randomCheck
+isPresent=1
+if [ $randomCheck -eq $isPresent ]
+then
+ echo "Emp present"
+else
+echo "Emp Absent"
+fi
+
 
