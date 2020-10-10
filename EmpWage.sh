@@ -1,12 +1,13 @@
 #!/bin/bash -x
+isFulltime=1
 randomCheck=$((RANDOM%2))
-echo $randomCheck
-isPresent=1
-if [ $randomCheck -eq $isPresent ]
+if [ $randomCheck -eq $isFulltime ]
 then
- echo "Emp present"
+        empRatePerhour=20
+        emphrs=8
+        salary=$(($empRatePerhour*$emphrs))
 else
-echo "Emp Absent"
+        salary=0
 fi
-
+echo "Your one day salary is :" $salary
 
